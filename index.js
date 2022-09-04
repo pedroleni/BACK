@@ -1,7 +1,7 @@
 const express = require("express");
 const cors = require('cors');
 const UserRoutes = require('./src/api/user/user.routes');
-const PostRoutes = require('./src/api/post/post.routes');
+const ArticuloRoutes = require('./src/api/articulo/articulo.routes');
 
 const { connectDb } = require('./src/helpers/db');
 const { setUpCloudinary } = require("./src/helpers/cloudinary");
@@ -37,7 +37,7 @@ app.use(express.urlencoded({ limit: '1mb', extended: true }));
 
 
 app.use('/api/v1/user', UserRoutes);
-app.use('/api/v1/post', PostRoutes);
+app.use('/api/v1/articulo', ArticuloRoutes);
 
 // Error handler
 app.use((error, _req, res, _next) => {
