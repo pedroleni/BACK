@@ -40,7 +40,8 @@ const create = async (req, res, next) => {
       status: 201,
       message: "Created new post",
       data: { postInDb },
-    });
+    }
+    );
   } catch (error) {
     return next(setError(500, "Failed created post"));
   }
