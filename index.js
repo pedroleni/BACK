@@ -4,6 +4,7 @@ const UserRoutes = require('./src/api/user/user.routes');
 const ArticuloRoutes = require('./src/api/articulo/articulo.routes');
 const JuegoRoutes = require('./src/api/juego/juego.routes');
 const PlataformaRoutes = require('./src/api/plataforma/plataforma.routes');
+const ComentarioRoutes = require('./src/api/comentario/comentario.routes');
 
 const { connectDb } = require('./src/helpers/db');
 const { setUpCloudinary } = require("./src/helpers/cloudinary");
@@ -42,6 +43,8 @@ app.use('/api/v1/user', UserRoutes);
 app.use('/api/v1/articulo', ArticuloRoutes);
 app.use('/api/v1/juego', JuegoRoutes);
 app.use('/api/v1/plataforma', PlataformaRoutes);
+app.use('/api/v1/comentario', ComentarioRoutes);
+
 
 // Error handler
 app.use((error, _req, res, _next) => {
