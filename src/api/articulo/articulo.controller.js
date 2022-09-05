@@ -43,6 +43,11 @@ const create = async (req, res, next) => {
     }
     );
   } catch (error) {
+
+    if (articuloToSave) {
+      deleteFile(articuloToSave.image);
+    }
+
     return next(setError(500, "Failed created articulo"));
   }
 };
