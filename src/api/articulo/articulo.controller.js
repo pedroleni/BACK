@@ -32,10 +32,14 @@ const getById = async (req, res, next) => {
 };
 //----------------------------------------------------------------------------------------------
 const create = async (req, res, next) => {
+  let image;
   try {
     const articuloToSave = new Articulo(req.body);
     if (req.file) articuloToSave.image = req.file.path;
+    image = articuloToSave.image;
     const articuloInDb = await articuloToSave.save();
+
+
     return res.json({
       status: 201,
       message: "Created new articulo",
@@ -43,13 +47,14 @@ const create = async (req, res, next) => {
     }
     );
   } catch (error) {
-
-    if (articuloToSave) {
-      deleteFile(articuloToSave.image);
+    if(error) {
+      deleteFile(image)
     }
 
     return next(setError(500, "Failed created articulo"));
+    
   }
+  
 };
 //----------------------------------------------------------------------------------------------
 
@@ -75,6 +80,7 @@ const update = async (req, res, next) => {
     const ArticuloDB = await Articulo.findByIdAndUpdate(id, patchArticuloDB);
     return res.status(200).json({ new: patchArticuloDB, old: ArticuloDB });
   } catch (error) {
+    
     return next("Error to modify user", error);
   }
 };
