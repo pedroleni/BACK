@@ -1,8 +1,15 @@
-const JuegoRoutes = require("express").Router();
+const JuegoRoutes = require('express').Router();
 
-const { authorize } = require("../../middleware/auth");
-const { getAll, getById, update, remove, create, put  } = require("./juego.controller");
-const upload = require("../../middleware/file");
+const { authorize } = require('../../middleware/auth');
+const {
+	getAll,
+	getById,
+	update,
+	remove,
+	create,
+	put,
+} = require('./juego.controller');
+const upload = require('../../middleware/file');
 // const rateLimit = require("express-rate-limit");
 
 // const concertCreateRateLimit = rateLimit({
@@ -12,10 +19,10 @@ const upload = require("../../middleware/file");
 //   legacyHeaders: false,
 // });
 
-JuegoRoutes.post('/create',upload.single("image"), create);
+JuegoRoutes.post('/create', upload.single('image'), create);
 JuegoRoutes.get('/', getAll);
 JuegoRoutes.get('/:id', getById);
-JuegoRoutes.patch('/:id', [authorize], upload.single("image"), update);
+JuegoRoutes.patch('/:id', [authorize], upload.single('image'), update);
 JuegoRoutes.delete('/:id', [authorize], remove);
 JuegoRoutes.delete('/:id/like', [authorize], put);
 

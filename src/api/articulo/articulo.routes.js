@@ -1,8 +1,15 @@
-const ArticuloRoutes = require("express").Router();
+const ArticuloRoutes = require('express').Router();
 
-const { authorize } = require("../../middleware/auth");
-const { getAll, getById, update, remove, create, put  } = require("./articulo.controller");
-const upload = require("../../middleware/file");
+const { authorize } = require('../../middleware/auth');
+const {
+	getAll,
+	getById,
+	update,
+	remove,
+	create,
+	put,
+} = require('./articulo.controller');
+const upload = require('../../middleware/file');
 // const rateLimit = require("express-rate-limit");
 
 // const concertCreateRateLimit = rateLimit({
@@ -12,10 +19,10 @@ const upload = require("../../middleware/file");
 //   legacyHeaders: false,
 // });
 
-ArticuloRoutes.post('/create',upload.single("image"), create);
+ArticuloRoutes.post('/create', upload.single('image'), create);
 ArticuloRoutes.get('/', getAll);
 ArticuloRoutes.get('/:id', getById);
-ArticuloRoutes.patch('/:id', [authorize], upload.single("image"), update);
+ArticuloRoutes.patch('/:id', [authorize], upload.single('image'), update);
 ArticuloRoutes.delete('/:id', [authorize], remove);
 ArticuloRoutes.delete('/:id/like', [authorize], put);
 

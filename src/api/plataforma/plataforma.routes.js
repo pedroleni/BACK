@@ -1,8 +1,15 @@
-const PlataformaRoutes = require("express").Router();
+const PlataformaRoutes = require('express').Router();
 
-const { authorize } = require("../../middleware/auth");
-const { getAll, getById, update, remove, create, put  } = require("./plataforma.controller");
-const upload = require("../../middleware/file");
+const { authorize } = require('../../middleware/auth');
+const {
+	getAll,
+	getById,
+	update,
+	remove,
+	create,
+	put,
+} = require('./plataforma.controller');
+const upload = require('../../middleware/file');
 // const rateLimit = require("express-rate-limit");
 
 // const concertCreateRateLimit = rateLimit({
@@ -12,10 +19,10 @@ const upload = require("../../middleware/file");
 //   legacyHeaders: false,
 // });
 
-PlataformaRoutes.post('/create',upload.single("image"), create);
+PlataformaRoutes.post('/create', upload.single('image'), create);
 PlataformaRoutes.get('/', getAll);
 PlataformaRoutes.get('/:id', getById);
-PlataformaRoutes.patch('/:id', [authorize], upload.single("image"), update);
+PlataformaRoutes.patch('/:id', [authorize], upload.single('image'), update);
 PlataformaRoutes.delete('/:id', [authorize], remove);
 PlataformaRoutes.delete('/:id/like', [authorize], put);
 
