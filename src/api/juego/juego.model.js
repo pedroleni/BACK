@@ -5,11 +5,12 @@ const schema = new Schema(
 	{
 		name: { type: String, required: true },
 		descripcion: { type: String },
-		desarrolladora: { type: String, unique: true, required: true },
+		desarrolladora:  { type: String },
 		year: { type: String, required: true },
 		type: { type: String },
 		pegi: { type: String },
 		image: { type: String },
+		plataformas: [{ type: Schema.Types.ObjectId, ref: "plataforma", required: true }]
 
 		// juego:{type: String },
 		// plataforma:{type: String },
