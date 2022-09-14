@@ -8,14 +8,10 @@ const schema = new Schema(
 		contenido: { type: String, required: true },
 		email: { type: String },
 		image: { type: String },
-
-		// juego:{type: String },
-		// plataforma:{type: String },
-		// comentarios:{type: String },
-		// likes: {type: Array, default: []},
-		// juego: [{ type: Schema.Types.ObjectId, ref: "companies", required: true }],
-		// plataformas: [{ type: Schema.Types.ObjectId, ref: "companies", required: true }],
-		// comentarios: [{ type: Schema.Types.ObjectId, ref: "companies", required: true }],
+		plataformas: { type: String },
+		juego:{type: String },
+		likes: {type: Array, default: []},
+		comentarios:[{ type: Schema.Types.ObjectId, ref: "comentario", required: true }]
 	},
 	{
 		timestamps: true,
