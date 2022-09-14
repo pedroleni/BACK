@@ -11,7 +11,7 @@ const schema = new Schema(
 		plataformas: { type: String },
 		juego:{type: String },
 		likes: {type: Array, default: []},
-		comentarios:[{ type: Schema.Types.ObjectId, ref: "comentario" }]
+		comentarios:[{ type: Schema.Types.ObjectId, ref: "comentario", default: [] }]
 	},
 	{
 		timestamps: true,
