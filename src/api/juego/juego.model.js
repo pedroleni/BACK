@@ -10,15 +10,8 @@ const schema = new Schema(
 		type: { type: String },
 		pegi: { type: String },
 		image: { type: String },
-		plataformas: { type: String }
-
-		// juego:{type: String },
-		// plataforma:{type: String },
-		// comentarios:{type: String },
-		// likes: {type: Array, default: []},
-		// juego: [{ type: Schema.Types.ObjectId, ref: "companies", required: true }],
-		// plataformas: [{ type: Schema.Types.ObjectId, ref: "companies", required: true }],
-		// comentarios: [{ type: Schema.Types.ObjectId, ref: "companies", required: true }],
+		plataformas: { type: String },
+		likes: {type: Array, default: []}
 	},
 	{
 		timestamps: true,
