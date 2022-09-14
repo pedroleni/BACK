@@ -12,7 +12,7 @@ const schema = new Schema(
 		isAdmin: { type: String },
 		email: { type: String },
 		image: { type: String },
-		location: { type: String },
+		location: { type: String }
 	},
 	{
 		timestamps: true,
