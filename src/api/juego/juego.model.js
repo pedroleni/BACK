@@ -10,7 +10,7 @@ const schema = new Schema(
 		type: { type: String },
 		pegi: { type: String },
 		image: { type: String },
-		plataformas: [{ type: Schema.Types.ObjectId, ref: "plataforma", required: true }]
+		plataformas: { type: String }
 
 		// juego:{type: String },
 		// plataforma:{type: String },
