@@ -9,7 +9,8 @@ const schema = new Schema(
 		image: { type: String },
 		plataformas: { type: String },
 		juego:{type: String },
-		likes: {type: Array, default: []}
+		likes: {type: Array, default: []},
+		comentarios:[{ type: Schema.Types.ObjectId, ref: "comentario", default: [] }]
 		
 	},
 	{
