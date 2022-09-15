@@ -6,6 +6,7 @@ const schema = new Schema(
 		name: { type: String, required: true },
 		descripcion: { type: String },
 		desarrolladora:  { type: String },
+		video:  { type: String },
 		year: { type: String, required: true },
 		type: { type: String },
 		pegi: { type: String },
