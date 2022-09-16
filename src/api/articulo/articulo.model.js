@@ -4,7 +4,7 @@ const Schema = mongoose.Schema;
 const schema = new Schema(
 	{
 		titulo: { type: String, required: true },
-		autor: { type: String, unique: true, required: true },
+		autor: { type: String, required: true },
 		contenido: { type: String, required: true },
 		resumen: { type: String},
 		image: { type: String },
