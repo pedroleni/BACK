@@ -24,6 +24,6 @@ ComentarioRoutes.get('/', getAll);
 ComentarioRoutes.get('/:id', getById);
 ComentarioRoutes.patch('/:id', [authorize], upload.single('image'), update);
 ComentarioRoutes.delete('/:id', [authorize], remove);
-ComentarioRoutes.delete('/:id/like', [authorize], put);
+ComentarioRoutes.put('/:id/like', [authorize], put);
 
 module.exports = ComentarioRoutes;
