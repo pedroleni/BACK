@@ -24,6 +24,6 @@ ArticuloRoutes.get('/', getAll);
 ArticuloRoutes.get('/:id', getById);
 ArticuloRoutes.patch('/:id', [authorize], upload.single('image'), update);
 ArticuloRoutes.delete('/:id', [authorize], remove);
-ArticuloRoutes.delete('/:id/like', [authorize], put);
+ArticuloRoutes.put('/:id/like', [authorize], put);
 
 module.exports = ArticuloRoutes;
