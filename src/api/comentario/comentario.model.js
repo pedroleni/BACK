@@ -4,6 +4,7 @@ const Schema = mongoose.Schema;
 const schema = new Schema(
 	{
 		autor: { type: String, required: true },
+		nombre: { type: String },
 		contenido: { type: String, unique: true, required: true },
 		likes: {type: Array, default: []},
 		articulo: { type: Schema.Types.ObjectId, ref: "articulo", default: {} }
