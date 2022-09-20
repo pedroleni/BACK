@@ -24,6 +24,6 @@ PlataformaRoutes.get('/', getAll);
 PlataformaRoutes.get('/:id', getById);
 PlataformaRoutes.patch('/:id', [authorize], upload.single('image'), update);
 PlataformaRoutes.delete('/:id', [authorize], remove);
-PlataformaRoutes.delete('/:id/like', [authorize], put);
+PlataformaRoutes.put('/:id/like', [authorize], put);
 
 module.exports = PlataformaRoutes;
