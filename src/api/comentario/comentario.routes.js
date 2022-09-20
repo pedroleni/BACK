@@ -8,6 +8,7 @@ const {
 	remove,
 	create,
 	put,
+	getByArticulo,
 } = require('./comentario.controller');
 const upload = require('../../middleware/file');
 // const rateLimit = require("express-rate-limit");
@@ -25,5 +26,7 @@ ComentarioRoutes.get('/:id', getById);
 ComentarioRoutes.patch('/:id', [authorize], upload.single('image'), update);
 ComentarioRoutes.delete('/:id', [authorize], remove);
 ComentarioRoutes.put('/:id/like', [authorize], put);
+ComentarioRoutes.get('/articulo/:id', [authorize], getByArticulo);
 
 module.exports = ComentarioRoutes;
+
