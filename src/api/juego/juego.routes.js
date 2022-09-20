@@ -24,6 +24,6 @@ JuegoRoutes.get('/', getAll);
 JuegoRoutes.get('/:id', getById);
 JuegoRoutes.patch('/:id', [authorize], upload.single('image'), update);
 JuegoRoutes.delete('/:id', [authorize], remove);
-JuegoRoutes.delete('/:id/like', [authorize], put);
+JuegoRoutes.put('/:id/like', [authorize], put);
 
 module.exports = JuegoRoutes;
