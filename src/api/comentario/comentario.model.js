@@ -5,7 +5,6 @@ const schema = new Schema(
 	{
 		autor: { type: String, required: true },
 		contenido: { type: String, unique: true, required: true },
-		fecha: { type: String, required: true },
 		likes: {type: Array, default: []},
 		articulo: [{ type: Schema.Types.ObjectId, ref: "articulo", default: [] }]
 	},
