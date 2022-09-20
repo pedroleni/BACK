@@ -140,4 +140,5 @@ module.exports = {
 	remove,
 	create,
 	put,
+	getByArticulo
 };
