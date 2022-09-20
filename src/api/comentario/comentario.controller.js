@@ -3,6 +3,21 @@ const { setError } = require('../../helpers/utils');
 const { deleteFile } = require('../../middleware/delete-file');
 
 //----------------------------------------------------------------------------------------------
+const getByArticulo = async (req, res, next) => {
+  try {
+    const { id } = req.params;
+    const comentario = await Comentario.find({ articulo: id });
+    if (!comentario) return next(setError(404, 'comentario of article not found'));
+    return res.json({
+      status: 200,
+      message: 'Recovered comentario by articulo id',
+      data: { animal }
+    });
+  } catch (error) {
+    return next(setError(500, 'Failed comentario by id articulo'))
+  }
+}
+
 const getAll = async (req, res, next) => {
 	try {
 		const comentario = await Comentario.find().populate("articulo");
