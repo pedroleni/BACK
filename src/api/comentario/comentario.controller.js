@@ -5,7 +5,7 @@ const { deleteFile } = require('../../middleware/delete-file');
 //----------------------------------------------------------------------------------------------
 const getAll = async (req, res, next) => {
 	try {
-		const comentario = await Comentario.find();
+		const comentario = await Comentario.find().populate("articulo");
 		return res.json({
 			status: 200,
 			message: 'Recovered all comentario',
