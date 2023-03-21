@@ -16,8 +16,7 @@ const PORT = process.env.PORT || 8000;
 
 const app = express();
 
-// Cors enable
-app.use(cors());
+
 
 app.use((_req, res, next) => {
 	res.header('Access-Control-Allow-Methods', 'GET,PUT,POST,DELETE,PATCH');
@@ -25,6 +24,10 @@ app.use((_req, res, next) => {
 	res.header('Access-Control-Allow-Headers', 'Content-Type');
 	next();
 });
+
+
+// Cors enable
+app.use(cors());
 
 // Json Data
 app.use(express.json({ limit: '1mb' }));
