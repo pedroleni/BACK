@@ -17,15 +17,7 @@ const PORT = process.env.PORT || 8000;
 const app = express();
 
 // Cors enable
-app.use(
-	cors({
-		origin: (_origin, callback) => {
-			callback(null, true);
-		},
-
-		credentials: true,
-	})
-);
+app.use(cors());
 
 app.use((_req, res, next) => {
 	res.header('Access-Control-Allow-Methods', 'GET,PUT,POST,DELETE,PATCH');
